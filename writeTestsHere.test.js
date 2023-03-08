@@ -1,13 +1,36 @@
 //
 const func1 = require('./1.js');
+const func2 = require('./2.js');
+const func3 = require('./3.js');
 describe('Main', () => {
   test('getSum', () => {
     expect(func1([1,2,3])).toBe(6)
     expect(func1([4,1,2])).toBe(7)
     expect(func1([1,0,10])).toBe(11)
   })
+
+  test('arithmetic', () => {
+        const operator = {
+          'add':'+',
+          'substract':'-',
+          'multiply':'*',
+          'divide':'/'
+        }
+    expect(func2([1,2,'+'])).toBe(3)
+    expect(func2([5,1,'-'])).toBe(4)
+    expect(func2([1,10,'*'])).toBe(100)
+    expect(func2([10,2,'/'])).toBe(5)
+  })
+
+  test('checkNumber', () => {
+    expect(func3([8])).toBe(true)
+    expect(func3([13])).toBe(false)
+  })
+
+
 })
  /* test("Get an object's values using a key", () => {
+{
     const obj = {
       'James':'1000',
       'Emma':'500',
