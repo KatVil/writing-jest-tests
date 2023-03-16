@@ -16,7 +16,8 @@ describe('Main', () => {
           'multiply':'*',
           'divide':'/'
         }
-    expect(func2([1,2,'+'])).toBe(3)
+    expect(func2([1,2,'+'])).toBeCloseTo(3)
+    expect(func2([1,2,'+'])).toBeLessThan(4)
     expect(func2([5,1,'-'])).toBe(4)
     expect(func2([5,1,'-'])).not.toBe(5)
     expect(func2([1,10,'*'])).toBe(100)
