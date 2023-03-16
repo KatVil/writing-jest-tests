@@ -18,8 +18,13 @@ describe('Main', () => {
         }
     expect(func2([1,2,'+'])).toBe(3)
     expect(func2([5,1,'-'])).toBe(4)
+    expect(func2([5,1,'-'])).not.toBe(5)
     expect(func2([1,10,'*'])).toBe(100)
+    expect(func2([10,10,'*'])).toBeGreaterThan(99)
+    expect(func2([10,10,'*'])).toBeLessThan(101)
     expect(func2([10,2,'/'])).toBe(5)
+    expect(func2([1,2,'/'])).toBeCloseTo(0.499)
+    expect(func2([100,100,'/'])).toEqual(1)
   })
 
   test('checkNumber', () => {
